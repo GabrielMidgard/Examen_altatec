@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-09-2020 a las 00:53:18
+-- Tiempo de generación: 03-09-2020 a las 01:23:32
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -84,6 +84,7 @@ CREATE TABLE `sales` (
   `fk_client` int(11) NOT NULL,
   `fk_product` int(11) NOT NULL,
   `amount` int(11) NOT NULL,
+  `payment` float NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -91,9 +92,15 @@ CREATE TABLE `sales` (
 -- Volcado de datos para la tabla `sales`
 --
 
-INSERT INTO `sales` (`id`, `fk_client`, `fk_product`, `amount`, `created_at`) VALUES
-(1, 1, 1, 1, '2020-09-02 22:40:20'),
-(2, 2, 2, 2, '2020-09-02 22:40:20');
+INSERT INTO `sales` (`id`, `fk_client`, `fk_product`, `amount`, `payment`, `created_at`) VALUES
+(1, 1, 1, 1, 120, '2020-09-02 22:40:20'),
+(2, 2, 2, 2, 350, '2020-09-02 22:40:20'),
+(3, 2, 2, 3, 525, '2020-07-26 22:40:20'),
+(4, 2, 1, 10, 1200, '2020-05-13 22:40:20'),
+(5, 1, 1, 5, 600, '2020-09-02 22:40:20'),
+(6, 2, 2, 8, 1400, '2020-09-09 22:40:20'),
+(7, 2, 2, 3, 525, '2020-06-26 22:40:20'),
+(8, 2, 1, 10, 1200, '2020-04-13 22:40:20');
 
 --
 -- Índices para tablas volcadas
@@ -137,7 +144,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT de la tabla `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

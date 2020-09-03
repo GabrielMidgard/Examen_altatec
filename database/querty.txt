@@ -1,0 +1,4 @@
+SELECT MONTH(sales.created_at) AS noMes, MONTHNAME(sales.created_at) AS Mes, YEAR(sales.created_at) AS Año, 
+SUM(sales.payment) AS Total 
+FROM sales WHERE fk_client = 2 AND YEAR(sales.created_at) = 2020 
+GROUP BY Mes
